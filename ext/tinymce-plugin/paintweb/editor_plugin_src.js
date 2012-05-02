@@ -88,6 +88,9 @@ if (!window.tinymce) {
     'TinyMCE was not detected!');
   return;
 }
+else{
+  alert('I did find tinyMCE!');
+}
 
 // Basic functionality used by PaintWeb.
 if (!window.XMLHttpRequest || !document.createElement('canvas').getContext) {
@@ -145,7 +148,17 @@ function paintwebLoad () {
   var config = targetEditor.getParam('paintweb_config'),
       src    = config.tinymce.paintwebFolder + 'paintweb.js';
 
-  tinymce.ScriptLoader.load(src, paintwebLoaded);
+	  console.log("Loading script from source "+src);
+  
+  if (!window.tinymce){
+	  console.log("Can't find TinyMCE instance!");
+  }
+  var scriptLoader = new tinymce.DOM.ScriptLoader();
+  scriptLoader.load(src,paintwebLoaded);
+  //tinymce.ScriptLoader.load(src, paintwebLoaded);
+  if (tinymce.ScriptLoader.isDone) {
+	  console.log("Finished loading!");
+  }  
 };
 
 /**
@@ -153,13 +166,14 @@ function paintwebLoad () {
  * instance of PaintWeb and configures it.
  */
 function paintwebLoaded () {
+	console.log("Good news everyone! I reached paintWebLoad callback function!");
   if (paintwebInstance) {
-    return;
+	return;
   }
 
   paintwebInstance = new PaintWeb();
   paintwebConfig   = paintwebInstance.config;
-
+  
   var config      = targetEditor.getParam('paintweb_config'),
       textarea    = targetEditor.getElement();
       pNode       = targetContainer.parentNode,
@@ -170,7 +184,8 @@ function paintwebLoaded () {
   if (!PaintWeb.baseFolder) {
     PaintWeb.baseFolder = config.tinymce.paintwebFolder;
   }
-
+	console.log("Good news everyone! The base folder is: "+PaintWeb.baseFolder);
+  
   config.imageLoad      = targetImage;
   config.guiPlaceholder = pwContainer;
 
@@ -364,8 +379,8 @@ function paintwebEditStart () {
       overlayButton.value = targetEditor.getLang('paintweb.overlayLoading', 
           'Loading PaintWeb...');
     }
-
-    if (paintwebInstance) {
+    
+	if (paintwebInstance) {
       paintwebInstance.imageLoad(targetImage);
       paintwebShow();
     } else {
@@ -480,6 +495,10 @@ function paintwebNewImage (width, height, bgrColor, alt, title) {
   canvas      = null;
   context     = null;
 
+  //debug code remove me!
+  alert("I'm about to PaintWebEditStart!");
+  //debug code!
+  
   paintwebEditStart();
 };
 
@@ -768,7 +787,7 @@ tinymce.create('tinymce.plugins.paintweb', {
     var t = this;
 
     pluginUrl = url;
-
+	
     // Register the command so that it can be invoked by using 
     // tinyMCE.activeEditor.execCommand('paintwebEdit');
     ed.addCommand('paintwebEdit', paintwebEditCommand, ed);
