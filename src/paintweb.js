@@ -31,6 +31,7 @@
  * @param {Window} [win=window] The window object to use.
  * @param {Document} [doc=document] The document object to use.
  */
+ 
 function PaintWeb (win, doc) {
   var _self = this;
 

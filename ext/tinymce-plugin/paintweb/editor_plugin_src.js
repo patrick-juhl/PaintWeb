@@ -88,9 +88,6 @@ if (!window.tinymce) {
     'TinyMCE was not detected!');
   return;
 }
-else{
-  alert('I did find tinyMCE!');
-}
 
 // Basic functionality used by PaintWeb.
 if (!window.XMLHttpRequest || !document.createElement('canvas').getContext) {
@@ -147,17 +144,23 @@ function paintwebLoad () {
 
   var config = targetEditor.getParam('paintweb_config'),
       src    = config.tinymce.paintwebFolder + 'paintweb.js';
-	alert("some different message");
 	  console.log("Loading script from source: "+src);
   
-  if (!window.tinymce){
+	if (!window.tinymce) {
 	  console.log("Can't find TinyMCE instance!");
-  }
-  var scriptLoader = new tinymce.DOM.ScriptLoader();
-  scriptLoader.load(src,paintwebLoaded);
-  //tinymce.ScriptLoader.load(src, paintwebLoaded);
+	return;
+	}
+	else{
+	  console.log("I did find the TinyMCE instance!");
+	}
+  
+  tinymce.ScriptLoader.add(src,paintwebLoaded);
+  tinymce.ScriptLoader.loadQueue();
+  //var scriptLoader = new tinymce.dom.ScriptLoader();
+  //scriptLoader.load(src,paintwebLoaded);
+  //window.tinymce.ScriptLoader.load(src);
   if (tinymce.ScriptLoader.isDone) {
-	  console.log("Finished loading!");
+	  console.log("Finished loading paintweb.js, now calling paintwebloaded!");
   }  
 };
 
