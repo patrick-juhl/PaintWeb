@@ -334,6 +334,7 @@ ul.inheritsList
 <!-- ============================== class summary ========================== -->			
 			<p class="description">
 				
+				
 			
 				The selection tool.
 				
@@ -506,8 +507,7 @@ ul.inheritsList
 								<div class="fixedFont">
 								<b><a href="../symbols/pwlib.tools.selection.html#-timer">timer</a></b>
 								</div>
-								<div class="description">The interval ID used for invoking the drawing operation every few 
-milliseconds.</div>
+								<div class="description">The interval ID used for invoking the drawing operation every few milliseconds.</div>
 							</td>
 						</tr>
 					
@@ -517,8 +517,7 @@ milliseconds.</div>
 								<div class="fixedFont">
 								<b><a href="../symbols/pwlib.tools.selection.html#-x0">x0</a></b>
 								</div>
-								<div class="description">Holds the starting point on the <var>x</var> axis of the image, for any 
-ongoing operation.</div>
+								<div class="description">Holds the starting point on the <var>x</var> axis of the image, for any ongoing operation.</div>
 							</td>
 						</tr>
 					
@@ -528,8 +527,7 @@ ongoing operation.</div>
 								<div class="fixedFont">
 								<b><a href="../symbols/pwlib.tools.selection.html#-y0">y0</a></b>
 								</div>
-								<div class="description">Holds the starting point on the <var>y</var> axis of the image, for the any  
-ongoing operation.</div>
+								<div class="description">Holds the starting point on the <var>y</var> axis of the image, for the any  ongoing operation.</div>
 							</td>
 						</tr>
 					
@@ -649,8 +647,7 @@ ongoing operation.</div>
 							<td class="nameDescription">
 								<div class="fixedFont"><b><a href="../symbols/pwlib.tools.selection.html#-mouseAreaUpdate">mouseAreaUpdate</a></b>()
 								</div>
-								<div class="description">Determine the are where the mouse is located: if it is inside or outside of 
-the selection rectangle, or on the selection border.</div>
+								<div class="description">Determine the are where the mouse is located: if it is inside or outside of the selection rectangle, or on the selection border.</div>
 							</td>
 						</tr>
 					
@@ -704,8 +701,7 @@ the selection rectangle, or on the selection border.</div>
 							<td class="nameDescription">
 								<div class="fixedFont"><b><a href="../symbols/pwlib.tools.selection.html#-selectionBufferInit">selectionBufferInit</a></b>()
 								</div>
-								<div class="description">Initialize the selection buffer, when the user starts dragging or resizing 
-the selected pixels.</div>
+								<div class="description">Initialize the selection buffer, when the user starts dragging or resizing the selected pixels.</div>
 							</td>
 						</tr>
 					
@@ -777,8 +773,7 @@ the selected pixels.</div>
 							<td class="nameDescription">
 								<div class="fixedFont"><b><a href="../symbols/pwlib.tools.selection.html#selectionFill">selectionFill</a></b>()
 								</div>
-								<div class="description">Fill the available selection with the current 
-<var>bufferContext.fillStyle</var>.</div>
+								<div class="description">Fill the available selection with the current <var>bufferContext.fillStyle</var>.</div>
 							</td>
 						</tr>
 					
@@ -882,8 +877,7 @@ the selected pixels.</div>
 					
 					</div>
 					<div class="description">
-						The last selection rectangle that was drawn. This is used by the selection 
-drawing functions.
+						The last selection rectangle that was drawn. This is used by the selection drawing functions.
 						
 						
 					</div>
@@ -905,13 +899,7 @@ drawing functions.
 					
 					</div>
 					<div class="description">
-						The area type under the current mouse location.
-
-<p>When the selection is available the mouse location can be on top/inside 
-the selection rectangle, on the border of the selection, or outside the 
-selection.
-
-<p>Possible values: 'in', 'out', 'border'.
+						The area type under the current mouse location.<p>When the selection is available the mouse location can be on top/inside the selection rectangle, on the border of the selection, or outside the selection.<p>Possible values: 'in', 'out', 'border'.
 						
 						
 					</div>
@@ -940,14 +928,7 @@ selection.
 					
 					</div>
 					<div class="description">
-						The resize type. If the mouse is on top of the selection border, then the 
-selection can be resized. The direction of the resize operation is 
-determined by the location of the mouse.
-
-<p>While the user resizes the selection this variable can hold the 
-following values: 'n' (North), 'ne' (North-East), 'e' (East), 'se' 
-(South-East), 's' (South), 'sw' (South-West), 'w' (West), 'nw' 
-(North-West).
+						The resize type. If the mouse is on top of the selection border, then the selection can be resized. The direction of the resize operation is determined by the location of the mouse.<p>While the user resizes the selection this variable can hold the following values: 'n' (North), 'ne' (North-East), 'e' (East), 'se' (South-East), 's' (South), 'sw' (South-West), 'w' (West), 'nw' (North-West).
 						
 						
 					</div>
@@ -1027,28 +1008,7 @@ following values: 'n' (North), 'ne' (North-East), 'e' (East), 'se'
 					
 					</div>
 					<div class="description">
-						Selection state. Known states:
-
-<ul>
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_PENDING">pwlib.tools.selection#STATE_PENDING</a> - Selection dropped after 
-  the <code>mousedown</code> event is fired. The script can switch to 
-  STATE_DRAWING if the mouse moves, or to STATE_NONE if it does not 
-  (allowing the user to drop the selection).
-
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_NONE">pwlib.tools.selection#STATE_NONE</a> - No selection is available.
-
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_DRAWING">pwlib.tools.selection#STATE_DRAWING</a> - The user is drawing the 
-  selection rectangle.
-
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_SELECTED">pwlib.tools.selection#STATE_SELECTED</a> - The selection 
-  rectangle is available.
-
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_DRAGGING">pwlib.tools.selection#STATE_DRAGGING</a> - The user is 
-  dragging/moving the current selection.
-
-  <li><a href="../symbols/pwlib.tools.selection.html#STATE_RESIZING">pwlib.tools.selection#STATE_RESIZING</a> - The user is resizing 
-  the current selection.
-</ul>
+						Selection state. Known states:<ul>  <li><a href="../symbols/pwlib.tools.selection.html#STATE_PENDING">pwlib.tools.selection#STATE_PENDING</a> - Selection dropped after   the <code>mousedown</code> event is fired. The script can switch to   STATE_DRAWING if the mouse moves, or to STATE_NONE if it does not   (allowing the user to drop the selection).  <li><a href="../symbols/pwlib.tools.selection.html#STATE_NONE">pwlib.tools.selection#STATE_NONE</a> - No selection is available.  <li><a href="../symbols/pwlib.tools.selection.html#STATE_DRAWING">pwlib.tools.selection#STATE_DRAWING</a> - The user is drawing the   selection rectangle.  <li><a href="../symbols/pwlib.tools.selection.html#STATE_SELECTED">pwlib.tools.selection#STATE_SELECTED</a> - The selection   rectangle is available.  <li><a href="../symbols/pwlib.tools.selection.html#STATE_DRAGGING">pwlib.tools.selection#STATE_DRAGGING</a> - The user is   dragging/moving the current selection.  <li><a href="../symbols/pwlib.tools.selection.html#STATE_RESIZING">pwlib.tools.selection#STATE_RESIZING</a> - The user is resizing   the current selection.</ul>
 						
 						
 					</div>
@@ -1143,10 +1103,7 @@ following values: 'n' (North), 'ne' (North-East), 'e' (East), 'se'
 					
 					</div>
 					<div class="description">
-						The selection has been dropped, and the mouse button is down. The user has 
-two choices: he releases the mouse button, thus the selection is dropped 
-and the tool switches to STATE_NONE, or he moves the mouse in order to 
-start a new selection (STATE_DRAWING).
+						The selection has been dropped, and the mouse button is down. The user has two choices: he releases the mouse button, thus the selection is dropped and the tool switches to STATE_NONE, or he moves the mouse in order to start a new selection (STATE_DRAWING).
 						
 						
 					</div>
@@ -1212,8 +1169,7 @@ start a new selection (STATE_DRAWING).
 					
 					</div>
 					<div class="description">
-						The interval ID used for invoking the drawing operation every few 
-milliseconds.
+						The interval ID used for invoking the drawing operation every few milliseconds.
 						
 						
 					</div>
@@ -1242,8 +1198,7 @@ milliseconds.
 					
 					</div>
 					<div class="description">
-						Holds the starting point on the <var>x</var> axis of the image, for any 
-ongoing operation.
+						Holds the starting point on the <var>x</var> axis of the image, for any ongoing operation.
 						
 						
 					</div>
@@ -1265,8 +1220,7 @@ ongoing operation.
 					
 					</div>
 					<div class="description">
-						Holds the starting point on the <var>y</var> axis of the image, for the any  
-ongoing operation.
+						Holds the starting point on the <var>y</var> axis of the image, for the any  ongoing operation.
 						
 						
 					</div>
@@ -1296,8 +1250,7 @@ ongoing operation.
 					
 					</div>
 					<div class="description">
-						The tool activation code. This method sets-up multiple event listeners for 
-several target objects.
+						The tool activation code. This method sets-up multiple event listeners for several target objects.
 						
 						
 					</div>
@@ -1322,16 +1275,7 @@ several target objects.
 					
 					</div>
 					<div class="description">
-						Paste an image from the "clipboard". The <a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a> object 
-must be an ImageData. This method will generate a new selection which will 
-hold the pasted image.
-
-<p>The <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event is 
-dispatched.
-
-<p>If the PaintWeb.config.selection.transform value is false, then 
-it becomes true. The <a href="../symbols/pwlib.appEvent.configChange.html">pwlib.appEvent.configChange</a> application is 
-then dispatched.
+						Paste an image from the "clipboard". The <a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a> object must be an ImageData. This method will generate a new selection which will hold the pasted image.<p>The <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event is dispatched.<p>If the PaintWeb.config.selection.transform value is false, then it becomes true. The <a href="../symbols/pwlib.appEvent.configChange.html">pwlib.appEvent.configChange</a> application is then dispatched.
 						
 						
 					</div>
@@ -1363,8 +1307,7 @@ then dispatched.
 					
 					</div>
 					<div class="description">
-						The tool deactivation code. This removes all event listeners and cleans up 
-the document.
+						The tool deactivation code. This removes all event listeners and cleans up the document.
 						
 						
 					</div>
@@ -1389,8 +1332,7 @@ the document.
 					
 					</div>
 					<div class="description">
-						The <code>canvasSizeChange</code> application event handler. This method 
-makes sure the selection size stays in sync.
+						The <code>canvasSizeChange</code> application event handler. This method makes sure the selection size stays in sync.
 						
 						
 					</div>
@@ -1426,9 +1368,7 @@ makes sure the selection size stays in sync.
 					
 					</div>
 					<div class="description">
-						The <code>configChange</code> application event handler. This method makes 
-sure that changes to the selection transparency configuration option are 
-applied.
+						The <code>configChange</code> application event handler. This method makes sure that changes to the selection transparency configuration option are applied.
 						
 						
 					</div>
@@ -1464,8 +1404,7 @@ applied.
 					
 					</div>
 					<div class="description">
-						The <code>keydown</code> event handler. This method calls selection-related 
-commands associated to keyboard shortcuts.
+						The <code>keydown</code> event handler. This method calls selection-related commands associated to keyboard shortcuts.
 						
 						
 					</div>
@@ -1491,8 +1430,7 @@ commands associated to keyboard shortcuts.
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{Boolean}</span> True if the keyboard shortcut was recognized, or false 
-if not.</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> True if the keyboard shortcut was recognized, or false if not.</dd>
 							
 							</dl>
 						
@@ -1501,8 +1439,7 @@ if not.</dd>
 							<dl class="detailList">
 							<dt class="heading">See:</dt>
 							
-								<dd>PaintWeb.config.selection.keys holds the keyboard shortcuts 
-configuration.</dd>
+								<dd>PaintWeb.config.selection.keys holds the keyboard shortcuts configuration.</dd>
 							
 							</dl>
 						
@@ -1650,8 +1587,7 @@ configuration.</dd>
 					
 					</div>
 					<div class="description">
-						Determine the are where the mouse is located: if it is inside or outside of 
-the selection rectangle, or on the selection border.
+						Determine the are where the mouse is located: if it is inside or outside of the selection rectangle, or on the selection border.
 						
 						
 					</div>
@@ -1676,12 +1612,7 @@ the selection rectangle, or on the selection border.
 					
 					</div>
 					<div class="description">
-						The <code>mousedown</code> event handler. Depending on the mouse location, 
-this method does initiate different selection operations: drawing, 
-dropping, dragging or resizing.
-
-<p>Hold the <kbd>Control</kbd> key down to temporarily toggle the 
-transformation mode.
+						The <code>mousedown</code> event handler. Depending on the mouse location, this method does initiate different selection operations: drawing, dropping, dragging or resizing.<p>Hold the <kbd>Control</kbd> key down to temporarily toggle the transformation mode.
 						
 						
 					</div>
@@ -1753,12 +1684,7 @@ transformation mode.
 					
 					</div>
 					<div class="description">
-						The <code>mouseup</code> event handler. This method ends any selection 
-operation.
-
-<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> 
-application event when the selection state is changed or when the selection 
-size/location is updated.
+						The <code>mouseup</code> event handler. This method ends any selection operation.<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event when the selection state is changed or when the selection size/location is updated.
 						
 						
 					</div>
@@ -1794,8 +1720,7 @@ size/location is updated.
 					
 					</div>
 					<div class="description">
-						The tool preactivation code. This function prepares the selection canvas 
-element.
+						The tool preactivation code. This function prepares the selection canvas element.
 						
 						
 					</div>
@@ -1810,8 +1735,7 @@ element.
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{Boolean}</span> True if the activation did not fail, or false otherwise.  
-If false is returned, the selection tool cannot be activated.</dd>
+								<dd><span class="light fixedFont">{Boolean}</span> True if the activation did not fail, or false otherwise.  If false is returned, the selection tool cannot be activated.</dd>
 							
 							</dl>
 						
@@ -1828,10 +1752,7 @@ If false is returned, the selection tool cannot be activated.</dd>
 					
 					</div>
 					<div class="description">
-						Select all the entire image.
-
-<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> 
-application event.
+						Select all the entire image.<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event.
 						
 						
 					</div>
@@ -1863,8 +1784,7 @@ application event.
 					
 					</div>
 					<div class="description">
-						Initialize the selection buffer, when the user starts dragging or resizing 
-the selected pixels.
+						Initialize the selection buffer, when the user starts dragging or resizing the selected pixels.
 						
 						
 					</div>
@@ -1889,11 +1809,7 @@ the selected pixels.
 					
 					</div>
 					<div class="description">
-						Copy the selected pixels. The associated ImageData is stored in 
-<a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a>.
-
-<p>This method dispatches the <a href="../symbols/pwlib.appEvent.clipboardUpdate.html">pwlib.appEvent.clipboardUpdate</a> 
-application event.
+						Copy the selected pixels. The associated ImageData is stored in <a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a>.<p>This method dispatches the <a href="../symbols/pwlib.appEvent.clipboardUpdate.html">pwlib.appEvent.clipboardUpdate</a> application event.
 						
 						
 					</div>
@@ -1925,11 +1841,7 @@ application event.
 					
 					</div>
 					<div class="description">
-						Crop the image to selection width and height. The selected pixels become 
-the image itself.
-
-<p>This method invokes the this#selectionMerge and 
-<a href="../symbols/PaintWeb.html#imageCrop">PaintWeb#imageCrop</a> methods.
+						Crop the image to selection width and height. The selected pixels become the image itself.<p>This method invokes the this#selectionMerge and <a href="../symbols/PaintWeb.html#imageCrop">PaintWeb#imageCrop</a> methods.
 						
 						
 					</div>
@@ -1961,11 +1873,7 @@ the image itself.
 					
 					</div>
 					<div class="description">
-						Cut the selected pixels. The associated ImageData is stored in 
-<a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a>.
-
-<p>This method dispatches two application events: 
-<a href="../symbols/pwlib.appEvent.clipboardUpdate.html">pwlib.appEvent.clipboardUpdate</a> and <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a>.
+						Cut the selected pixels. The associated ImageData is stored in <a href="../symbols/PaintWeb.html#clipboard">PaintWeb#clipboard</a>.<p>This method dispatches two application events: <a href="../symbols/pwlib.appEvent.clipboardUpdate.html">pwlib.appEvent.clipboardUpdate</a> and <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a>.
 						
 						
 					</div>
@@ -1997,12 +1905,7 @@ the image itself.
 					
 					</div>
 					<div class="description">
-						Perform selection delete.
-
-<p>This method changes the PaintWeb.config.selection.transform 
-value to false if the current selection has pixels that are currently being 
-manipulated. In such cases, the <a href="../symbols/pwlib.appEvent.configChange.html">pwlib.appEvent.configChange</a> 
-application event is also dispatched.
+						Perform selection delete.<p>This method changes the PaintWeb.config.selection.transform value to false if the current selection has pixels that are currently being manipulated. In such cases, the <a href="../symbols/pwlib.appEvent.configChange.html">pwlib.appEvent.configChange</a> application event is also dispatched.
 						
 						
 					</div>
@@ -2049,9 +1952,7 @@ application event is also dispatched.
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{false|Array}</span> False is returned if the selection is too small, 
-otherwise an array of two elements is returned. The array holds the 
-selection coordinates, x and y.</dd>
+								<dd><span class="light fixedFont">{false|Array}</span> False is returned if the selection is too small, otherwise an array of two elements is returned. The array holds the selection coordinates, x and y.</dd>
 							
 							</dl>
 						
@@ -2093,10 +1994,7 @@ selection coordinates, x and y.</dd>
 					
 					</div>
 					<div class="description">
-						Drop the current selection.
-
-<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> 
-application event.
+						Drop the current selection.<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event.
 						
 						
 					</div>
@@ -2128,8 +2026,7 @@ application event.
 					
 					</div>
 					<div class="description">
-						Fill the available selection with the current 
-<var>bufferContext.fillStyle</var>.
+						Fill the available selection with the current <var>bufferContext.fillStyle</var>.
 						
 						
 					</div>
@@ -2161,10 +2058,7 @@ application event.
 					
 					</div>
 					<div class="description">
-						Merge the selection buffer onto the current image layer.
-
-<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> 
-application event.
+						Merge the selection buffer onto the current image layer.<p>This method dispatches the <a href="../symbols/pwlib.appEvent.selectionChange.html">pwlib.appEvent.selectionChange</a> application event.
 						
 						
 					</div>
@@ -2236,9 +2130,7 @@ application event.
 							<dl class="detailList">
 							<dt class="heading">Returns:</dt>
 							
-								<dd><span class="light fixedFont">{false|Array}</span> False is returned if the selection is too small, 
-otherwise an array of four elements is returned. The array holds the 
-selection information: x, y, width and height.</dd>
+								<dd><span class="light fixedFont">{false|Array}</span> False is returned if the selection is too small, otherwise an array of four elements is returned. The array holds the selection information: x, y, width and height.</dd>
 							
 							</dl>
 						
@@ -2255,11 +2147,7 @@ selection information: x, y, width and height.</dd>
 					
 					</div>
 					<div class="description">
-						The timer function. When the mouse button is down, this method performs the 
-dragging/resizing operation. When the mouse button is not down, this method 
-simply tracks the mouse location for the purpose of determining the area 
-being pointed at: the selection, the borders, or if the mouse is outside 
-the selection.
+						The timer function. When the mouse button is down, this method performs the dragging/resizing operation. When the mouse button is not down, this method simply tracks the mouse location for the purpose of determining the area being pointed at: the selection, the borders, or if the mouse is outside the selection.
 						
 						
 					</div>
@@ -2288,7 +2176,7 @@ the selection.
 <!-- ============================== footer ================================= -->
 		<div class="fineprint" style="clear:both">
 			
-			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.3.0 on Sat Jun 26 2010 21:57:03 GMT+0300 (EEST)
+			Documentation generated by <a href="http://code.google.com/p/jsdoc-toolkit/" target="_blank">JsDoc Toolkit</a> 2.4.0 on Wed May 02 2012 15:23:20 GMT+0200 (CEST)
 		</div>
 	</body>
 </html>

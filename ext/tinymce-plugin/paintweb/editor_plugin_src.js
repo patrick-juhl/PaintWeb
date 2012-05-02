@@ -147,8 +147,8 @@ function paintwebLoad () {
 
   var config = targetEditor.getParam('paintweb_config'),
       src    = config.tinymce.paintwebFolder + 'paintweb.js';
-
-	  console.log("Loading script from source "+src);
+	alert("some different message");
+	  console.log("Loading script from source: "+src);
   
   if (!window.tinymce){
 	  console.log("Can't find TinyMCE instance!");
@@ -494,10 +494,6 @@ function paintwebNewImage (width, height, bgrColor, alt, title) {
   targetImage = elem;
   canvas      = null;
   context     = null;
-
-  //debug code remove me!
-  alert("I'm about to PaintWebEditStart!");
-  //debug code!
   
   paintwebEditStart();
 };
