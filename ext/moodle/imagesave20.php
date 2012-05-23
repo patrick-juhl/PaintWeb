@@ -71,7 +71,8 @@ function paintweb_send_result($url, $urlnew, $successful, $errormessage=null) {
 
 // Files saved by PaintWeb are stored in the draft area.
 $filearea = 'user_draft';
-$filepath = '/'; // ... in the root folder
+$component = 'user';
+$filepath = '/paintweb/'; // ... in the root folder
 
 // The list of allowed image MIME types associated to file extensions.
 $imgallowedtypes = array(
@@ -99,8 +100,7 @@ if (empty($contextid)) {
     $contextid = $context->id;
 }
 
-if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isloggedin() ||
-    !repository::check_context($contextid)) {
+if ($_SERVER['REQUEST_METHOD'] !== 'POST' || !isloggedin()) {
     paintweb_send_result($imgurl, $imgurlnew, false,
         get_string('moodleServer:permissionDenied', 'paintweb'));
 }
@@ -145,11 +145,19 @@ $fbrowser = get_file_browser();
 
 $file_record = new object();
 $file_record->contextid = $context->id;
+$file_record->component = $component;
 $file_record->filearea  = $filearea;
 $file_record->itemid    = $draftitemid;
 $file_record->filepath  = $filepath;
 $file_record->filename  = $filename;
 $file_record->userid    = $USER->id;
+
+echo "filepath: $filepath\n";
+echo "filename: $filename\n";
+echo "userid: $USER->id\n";
+echo "filearea: $filearea\n";
+echo "draftitemid $draftitemid\n";
+echo "contextid: $context->id\n";
 
 try {
     $file = $fs->create_file_from_string($file_record, $imgdata);
@@ -158,9 +166,27 @@ try {
 }
 $imgdata = null;
 
-$binfo = $fbrowser->get_file_info($context, $file->get_filearea(),
-    $file->get_itemid(), $file->get_filepath(), $file->get_filename());
+/*DEBUG code*/
+echo "\nBut I go on!\n";
+echo "imgurl = $imgurl\n";
+echo "imgurlnew = $imgurlnew\n";
 
+
+try {
+$testFile = $fs->get_file($context, $component, $filearea,$draftitemid, $filepath, $filename);
+}
+catch (Exception $err) {
+	paintweb_send_result($imgurl, $imgurlnew, false, $err->getMessage());
+}	
+	
+if ($testFile) {
+	$contents = $testFile->get_content();
+	$binfo = $fbrowser->get_file_info($context, $component, $filearea,$draftitemid, $filepath, $filename);
+} else {
+    // file doesn't exist - do something
+	echo "Error, file could not be found or accessed";
+}			
+	
 if (empty($binfo)) {
     paintweb_send_result($imgurl, $imgurlnew, false,
         get_string('moodleServer:saveFailed', 'paintweb'));

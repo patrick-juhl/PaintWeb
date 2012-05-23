@@ -37,7 +37,7 @@ if (!is_dir($moodlelangdir)) {
     return 1;
 }
 
-require_once($moodlelangdir . '/en_utf8/' . $moodlelangfile);
+require_once($moodlelangdir . '/en/' . $moodlelangfile);
 
 $keys = array_keys($string);
 
@@ -55,7 +55,7 @@ foreach ($keys as $key) {
 
         $langgroup = &$langgroup[$prop];
     }
-
+	
     $langgroup[$langprop] = get_string($key, 'paintweb');
 }
 

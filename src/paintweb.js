@@ -660,7 +660,6 @@ function PaintWeb (win, doc) {
       _self.initError(lang.failedConfigLoad);
       return;
     }
-
     var config = pwlib.jsonParse(xhr.responseText);
     pwlib.extend(_self.config, config);
 
@@ -772,7 +771,7 @@ function PaintWeb (win, doc) {
         script = base + cfg.guiScript;
 
     this.styleLoad(gui + 'style', style);
-
+	
     if (pwlib.gui) {
       this.guiScriptReady();
     } else {
@@ -2615,7 +2614,7 @@ function PaintWeb (win, doc) {
       alert(lang.errorImageSave + "\n" + err);
       return false;
     }
-
+	
     canvas = null;
 
     if (!idata || idata === 'data:,') {

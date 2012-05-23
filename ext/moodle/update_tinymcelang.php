@@ -39,7 +39,7 @@
 
 $pluginlangdir = '../tinymce-plugin/paintweb/langs';
 $moodlelangdir = '../../../../lang';
-$tinymcelangfile = 'editor_tinymce.php';
+$tinymcelangfile = 'editor.php';
 
 if (!is_dir($pluginlangdir)) {
     echo "The TinyMCE plugin folder could not be found: $paintweblangdir\n";
@@ -100,7 +100,7 @@ function paintweb_update_tinymcelang($file) {
     }
 
     if ($lang === 'en') {
-        $filephp = "$moodlelangdir/en_utf8/$tinymcelangfile";
+        $filephp = "$moodlelangdir/en/$tinymcelangfile";
     } else {
         $filephp = "$moodlelangdir/$lang/$tinymcelangfile";
     }
